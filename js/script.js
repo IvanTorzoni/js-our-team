@@ -3,6 +3,7 @@
 
 // Milestone 0 
 // Creo l'array con gli object
+
 const team = [
     // All'interno dell' array inseriamo tutti gli object. Negli object inseriamo le caratteristiche delle singole persone
 
@@ -52,11 +53,23 @@ const team = [
 // Faccio passare l'array e stampo in console tutti gli object all'interno
 for (i = 0; i < team.length; i++) {
     const teamInfos = team[i];
-    console.log(teamInfos);
+    // console.log(teamInfos);
     //Milestone 1  
     // Stampo i singoli elementi degli object nella console
     for (let key in teamInfos) {
-        console.log(teamInfos[key]);
+        // console.log(teamInfos[key]);
     }
 }
-
+// Milestone 2
+// Creo la visualizzazione delle stringhe dei singoli elementi
+const teamCards = document.getElementById("container");
+for (let i = 0; i < team.length; i++) {
+    const teamInfos = team[i]; 
+    console.log(teamInfos);
+    // Stapo la classe in pagina
+    teamCards.innerHTML += `
+    <h1>Nome : ${teamInfos.name}</h1>
+    <h2>Ruolo : ${teamInfos.role}</h2>
+    <div>Immagine : ${teamInfos.image}</div>
+    `;
+}
